@@ -20,7 +20,11 @@ app.use(express.json())
 app.use('/api',routes)
 
 app.get('/',(req,res) =>{
-    res.write('hello in Ec2')
+    res.send('hello in Ec2')
+})
+
+app.get('/testurl',(req,res) =>{
+    res.send('someting about it seems right')
 })
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
