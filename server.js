@@ -19,20 +19,9 @@ app.use(express.json())
 
 app.use('/api',routes)
 
-app.get ('/posts', (req, res) => {
-    res.send(posts)
-    })
-
-app.post('/posts',(req, res) => {
-    const id = randomBytes(4).toString('hex');
-    const {title} = req.body;
-
-    posts[id] = {
-        id, title
-    }
-    res.status(201).send(posts[id])
+app.get('/',(req,res) =>{
+    res.write('hello in Ec2')
 })
-
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
